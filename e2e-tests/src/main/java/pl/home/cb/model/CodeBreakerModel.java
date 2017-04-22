@@ -46,4 +46,8 @@ public class CodeBreakerModel {
             throw new RuntimeException(String.format("Error while writing to console !\n%s", e.getMessage()));
         }
     }
+
+    public void shutDown(){
+        cbApp.destroy();
+    }
 }
