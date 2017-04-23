@@ -30,8 +30,8 @@ public class CodeBreakerModel {
         StringBuffer output = new StringBuffer();
         try {
             while (cbReader.ready())
-                output.append(cbReader.readLine());
-            return output.toString();
+                output.append(cbReader.readLine()+"\n");
+            return output.toString().trim();
         } catch (IOException e) {
             e.printStackTrace();
             return "";

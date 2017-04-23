@@ -6,6 +6,8 @@ import cucumber.api.java.en.Then;
 import pl.home.cb.model.CodeBreakerModel;
 import pl.home.cb.test.utils.TestContext;
 
+import static org.hamcrest.junit.MatcherAssert.assertThat;
+import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSpace;
 import static org.junit.Assert.assertEquals;
 
 public class CoreSteps {
@@ -22,6 +24,6 @@ public class CoreSteps {
 
     @Then("^Welcome message is displayed:$")
     public void welcomeMessageIsDisplayed(String message) throws Throwable {
-        assertEquals(message, cb.getMessage());
+        assertThat(message, equalToIgnoringWhiteSpace(cb.getMessage()));
     }
 }
