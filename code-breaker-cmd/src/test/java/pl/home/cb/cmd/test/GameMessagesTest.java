@@ -7,13 +7,13 @@ import pl.home.cb.cmd.Game;
 import static org.junit.Assert.assertEquals;
 
 
-public class GameTest {
+public class GameMessagesTest {
     private static final String WELCOME_MESSAGE = "Welcome to code-breaker game.\r\nPlease make a guess.";
     private Game game;
 
     @Before
     public void setup(){
-        game = new Game();
+        game = new Game("1234");
     }
 
     @Test
