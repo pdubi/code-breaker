@@ -31,4 +31,21 @@ public class GameLogicTest {
         game = new Game("1441");
         assertEquals("++--", game.evaluateGuess("1414"));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void secretCannotBeGreaterThan6000(){
+        game = new Game("6001");
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void secretShouldNotBeLessThan4Digits(){
+        game = new Game("123");
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void secretShouldNotBeGreaterThan4Digits(){
+        game = new Game("12345");
+    }
+
+
 }

@@ -9,5 +9,11 @@ public class Main {
         String secret = String.format("%04d", random.nextInt(6000));
         Game game = new Game(secret);
         System.out.println(game.getWelcomeMessage());
+        Scanner scanner = new Scanner(System.in);
+        String guess;
+        while(true) {
+            guess = scanner.nextLine();
+            System.out.println(game.evaluateGuess(guess));
+        }
     }
 }
