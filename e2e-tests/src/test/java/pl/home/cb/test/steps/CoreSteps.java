@@ -22,9 +22,14 @@ public class CoreSteps {
         context.startApp("1234");
     }
 
-    @Given("^The secret password is \"([^\"]*)\"$")
-    public void theSecretPasswordIs(String secret)  {
+    @Given("^The game starts with secret password \"([^\"]*)\"$")
+    public void theGameStartsWithSecretPassword(String secret) {
         context.startApp(secret);
+    }
+
+    @Given("^User skips welcome message$")
+    public void userSkipsWelcomeMessage() {
+        context.getModel().getMessage();
     }
 
     @Then("^Welcome message is displayed:$")
