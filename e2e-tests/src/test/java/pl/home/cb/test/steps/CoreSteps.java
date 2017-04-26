@@ -11,19 +11,24 @@ import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSp
 import static org.junit.Assert.assertEquals;
 
 public class CoreSteps {
-    private CodeBreakerModel cb;
+    TestContext context;
 
     public CoreSteps(TestContext context){
-        cb = context.getModel();
+        this.context = context;
     }
 
     @Given("^User starts the game$")
-    public void userStartsTheGame() throws Throwable {
-        //Game is initiated within test context...
+    public void userStartsTheGame() {
+        context.startApp("1234");
+    }
+
+    @Given("^The secret password is \"([^\"]*)\"$")
+    public void theSecretPasswordIs(String secret)  {
+        context.startApp(secret);
     }
 
     @Then("^Welcome message is displayed:$")
-    public void welcomeMessageIsDisplayed(String message) throws Throwable {
-        assertThat(message, equalToIgnoringWhiteSpace(cb.getMessage()));
+    public void welcomeMessageIsDisplayed(String message) {
+        assertThat(message, equalToIgnoringWhiteSpace(context.getModel().getMessage()));
     }
 }

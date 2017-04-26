@@ -7,12 +7,15 @@ import pl.home.cb.model.CodeBreakerModel;
 import java.io.IOException;
 
 public class TestContext {
-    private static final String RUN_CMD_APP_COMMAND = "java -jar codebreaker-cmd-1.0-SNAPSHOT.jar";
+    private static final String RUN_CMD_APP_COMMAND = "java -jar codebreaker-cmd-1.0-SNAPSHOT.jar %s";
     private CodeBreakerModel model;
 
-    @Before
-    public void testSetup() throws IOException {
-        model = new CodeBreakerModel(Runtime.getRuntime().exec(RUN_CMD_APP_COMMAND));
+    public void startApp(String password){
+        try {
+            model = new CodeBreakerModel(Runtime.getRuntime().exec(String.format(RUN_CMD_APP_COMMAND, password)));
+        } catch (IOException e) {
+            throw new RuntimeException("Game not started due to "+e.getMessage());
+        }
     }
 
     @After
