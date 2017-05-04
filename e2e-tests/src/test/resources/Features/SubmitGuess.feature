@@ -1,4 +1,4 @@
-@WIP
+@Completed
 Feature: User submits guess, which is evaluated by the game.
 
   As a code-breaker player
