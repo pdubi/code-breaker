@@ -6,7 +6,7 @@
 
     <groupId>pl.home.codebreaker</groupId>
     <artifactId>codebreaker-cmd</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
