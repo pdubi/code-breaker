@@ -7,7 +7,7 @@ import pl.home.cb.model.CodeBreakerModel;
 import java.io.IOException;
 
 public class TestContext {
-    private static final String RUN_CMD_APP_COMMAND = "java -jar codebreaker-cmd-1.0-SNAPSHOT.jar %s";
+    private static final String RUN_CMD_APP_COMMAND = "java -jar codebreaker-cmd-1.1-SNAPSHOT.jar %s";
     private CodeBreakerModel model;
 
     public void startApp(String password){
