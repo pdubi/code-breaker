@@ -34,6 +34,11 @@ public class CoreSteps {
 
     @Then("^Welcome message is displayed:$")
     public void welcomeMessageIsDisplayed(String message) {
-        assertThat(message, equalToIgnoringWhiteSpace(context.getModel().getMessage()));
+        assertThat(context.getModel().getMessage(), equalToIgnoringWhiteSpace(message));
+    }
+
+    @Then("^Congratulations message is displayed:$")
+    public void congratulationsMessageIsDisplayed(String message) {
+        assertThat(context.getModel().getMessage(), equalToIgnoringWhiteSpace(message));
     }
 }
