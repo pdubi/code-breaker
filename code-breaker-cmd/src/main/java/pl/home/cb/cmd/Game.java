@@ -25,11 +25,15 @@ public class Game {
     public String getWelcomeMessage(){
         return Message.WELCOME_MESSAGE.toString();
     }
+
+    public String getCongratulationsMessage() {
+        return Message.CONGRATULATIONS_MESSAGE.toString();
+    }
 }
 
 enum Message{
-    WELCOME_MESSAGE("Welcome to code-breaker game.\r\n" +
-            "Please make a guess.");
+    WELCOME_MESSAGE("Welcome to code-breaker game.\r\nPlease make a guess."),
+    CONGRATULATIONS_MESSAGE("Congratulations!\nYou have successfully guessed the hidden password.");
 
     private final String message;
 
